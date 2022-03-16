@@ -1,0 +1,439 @@
+:root{
+    --red: rgb(165, 4, 4);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Calibri', Times, serif;
+    box-sizing: border-box;
+    transition: all .2 linear;
+    text-transform: capitalize;
+    outline: none;
+    text-decoration: none;
+}
+
+*::selection{
+    background:var(--red);
+    color: white;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+.heading{
+    display: inline-block;
+    color: #333;
+    margin:2rem 0;
+    padding: 1rem 0;
+    padding-top: 8rem;
+    font-size: 3rem;
+    border-bottom: .2rem solid var(--red);
+    align-items: center;
+}
+
+
+header{
+    width: 100%;
+    height: 6.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 2rem 3rem;
+    background-color: #333;
+}
+header .logo{
+    font-size: 3.5rem;
+    color: white;
+}
+
+header .logo span{
+    color: var(--red);
+}
+
+header .navbar ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .navbar ul li{
+    margin: 0 2rem;
+}
+
+header .navbar ul li a{
+    color: white;
+    font-size: 2rem;
+    font-weight: 200;
+}
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+    color: var(--red);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+
+header #menu{
+    font-size: 3rem;
+    color: var(--red);
+    cursor: pointer;
+    display: none;  
+} 
+
+
+.home{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("./10.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    clip-path: polygon(0 0, 100% 0,100% 85%, 50% 100%, 0 85%);
+}
+
+.service .box-container .box .info .more2,
+.about .row .content .more,
+.home .start{
+    box-shadow: 0 .3rem .4rem black;
+    color: white;
+    cursor: pointer;
+    border:.2rem solid var(--red);
+    color: var(--red);
+    background: none;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 0;
+    font-size: 2rem
+}
+.home .start{
+    padding:.5rem 5rem;
+}
+
+.about .row .content .more{
+    padding:.8rem 8rem;
+}
+
+.service .box-container .box .info .more2{
+    padding:.5rem 3rem;
+}
+
+.service .box-container .box .info .more2::before,
+.about .row .content .more::before,
+.home .start::before{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--red);
+    z-index: -1;
+    clip-path: circle(0% at 0% 0%);
+    transition: .2s;
+}
+
+.service .box-container .box .info .more2:hover::before,
+.about .row .content .more:hover::before,
+.home .start:hover::before{
+    clip-path: circle(100%);
+}
+
+.service .box-container .box .info .more2:hover,
+.about .row .content .more:hover,
+.home .start:hover{
+    color: white;
+}
+
+
+
+
+.layer{
+    background-color: rgba(99, 97, 97, 0.349);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.home h1{
+    font-size: 6rem;
+    color: white;
+    text-align: center;
+    text-shadow: 0 .3rem .5rem black;
+    padding: 0 1rem;
+    text-transform: uppercase;
+}
+
+
+
+.about .row{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 8rem;
+}
+
+.about .row .image{
+    flex: 1 1 40rem;
+    padding: 2rem;
+}
+
+.about .row .image img{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.about .row .content{
+    flex: 1 1 40rem;
+    padding: 2rem;
+}
+
+.about .row .content h3{
+    color: #333;
+    font-size: 4rem;
+}
+
+.about .row .content p{
+    color: #666;
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    text-transform: none;
+}
+
+.about .row .content .p{
+    padding-bottom: 4rem;
+}
+
+.service{
+    min-height: 100vh;
+    text-align: center;
+}
+
+.service .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 6rem;
+}
+
+.service .box-container .box{
+    height: 23rem;
+    width: 35rem;
+    margin: 1rem;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.service .box-container .box .video source,
+.service .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.service .box-container .box .info{
+    height: 90%;
+    width: 50vh;
+    position: absolute;
+    top: 11.5rem;
+    transform: translate(-50%, -50%) scale(0);
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    margin-left: 17.5rem;
+}
+
+.service .box-container .box .info p{
+    text-transform: none;
+}
+
+.service .box-container .box:hover .info{
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.3s ease-in-out;
+}
+
+.service .box-container .box .info h3{
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.service .box-container .box .info p{
+    font-size: 1.2rem;
+    color: #666;
+    padding: 1rem 2rem;
+
+}
+
+.trainer{
+    min-height: 100vh;
+    text-align: center;
+    background: #333;
+}
+.contact .heading,
+.register .heading,
+.trainer .heading{
+    color: white;
+}
+
+
+.trainer .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 6rem;
+}
+
+.trainer .box-container .box{
+    height: 40rem;
+    margin: 1.5rem 1rem;
+    width: 27rem;
+    border: 0.4rem solid var(--red);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 .3rem .5rem black;
+}
+
+.trainer .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.trainer .box-container .box p{
+    text-align: center;
+}
+
+
+.trainer .box-container .box .info{
+    color: #333;
+    background: white;
+    border-top: .5rem solid var(--red);
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    padding: 1rem 0;
+}   
+
+
+.contact{
+    justify-content:space-around;
+    display: flex;
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    flex-flow: column;
+    padding-bottom: 3.5rem;
+}
+
+.contact .heading{
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    font-size: 1.7rem;
+}
+
+.contact img{
+    width: 5rem;
+    margin-left: 30rem;
+}
+
+.contact .p,
+.contact h2{
+    margin-left: 32rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    text-transform: none;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    color:#333
+}
+
+.contact h2{
+    text-decoration: none;
+    margin-left: 30rem;
+}
+
+.register{
+    align-items: center;
+    justify-content:space-around;
+    display: flex;
+    background-color: #666;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    flex-flow: column;
+    clip-path: polygon(0 0, 100% 0,100% 150%, 10% 80%, 25% 0);
+}
+
+#fname, #lname, #pass, #tel, #email{
+    background-color: white;
+    border: none;
+    border-radius: 1rem;
+    width: 40rem;
+    height: 4rem;
+    padding-left:2rem;
+}
+
+#submit{
+    background: none;
+    border: 0.2rem solid white;
+    border-radius: 1rem;
+    width: 15rem;
+    height: 4rem;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: .8rem .8rem;
+    color: black;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+
+#submit:hover{
+    color: black;
+    clip-path: circle(100%);
+    font-family: 'Arial Narrow Bold',sans-serif;
+}
+
+.fname, .lname, .pass, .tel, .email{
+    padding-bottom: 2rem;
+}
+
+
+
+footer p{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+    background-color: white;
+}
